@@ -1,0 +1,9 @@
+plugins{
+    id'java-library'
+}
+tasks.withType(JavaCompiler){
+    options.encoding='UTF-8'
+}
+repositories {
+    mavenCentral()
+}
