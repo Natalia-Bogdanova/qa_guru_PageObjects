@@ -7,7 +7,7 @@ package com.bogdanova.tests;
 
         import static com.codeborne.selenide.Selenide.*;
 
-public class testPageObjectsTestMaxForm {
+public class TestPageObjectsTestMaxForm {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
     @BeforeAll
     static void configure(){
@@ -28,9 +28,8 @@ public class testPageObjectsTestMaxForm {
                 .setSubjects("Maths")
                 .setHobbies("Reading")
                 .setPicture("3.jpg")
-                .setAddress("red light, Geeta Colony", "Haryana", "Panipat");
-
-        $("#submit").click();
+                .setAddress("red light, Geeta Colony", "Haryana", "Panipat")
+                .clickSubmit();
 
         registrationFormPage.checkResultsTableVisible()
                 .checkResult("Student Name", "Vadim Pirogkov")
@@ -42,7 +41,7 @@ public class testPageObjectsTestMaxForm {
                 .checkResult("Hobbies", "Reading")
                 .checkResult("Picture", "3.jpg")
                 .checkResult("Address", "red light, Geeta Colony")
-                .checkResult("State and City", "Haryana Panipat");
-        $("#closeLargeModal").click();
+                .checkResult("State and City", "Haryana Panipat")
+                .clickClose();
     }
 }

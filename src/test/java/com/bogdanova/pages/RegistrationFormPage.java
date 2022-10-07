@@ -30,7 +30,7 @@ public class RegistrationFormPage {
     //Actions
     public RegistrationFormPage openPage() {
         open("/automation-practice-form");
-        Selenide.zoom(0.65);
+        Selenide.zoom(0.6);
        return this;
     }
 
@@ -90,6 +90,12 @@ public class RegistrationFormPage {
 
     public RegistrationFormPage clickSubmit () {
         $("#submit").click();
+
+        return this;
+    }
+
+    public RegistrationFormPage clickClose() {
+        $("#closeLargeModal").click();
 
         return this;
     }

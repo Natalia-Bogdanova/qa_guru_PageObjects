@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class testPageObjectsTestMiniForm {
+public class TestPageObjectsTestMiniForm {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
     @BeforeAll
     static void configure(){
@@ -23,15 +23,14 @@ public class testPageObjectsTestMiniForm {
                 .setLastName("Pirogkov")
                 .setEmail("Pirogkov@gmail.com")
                 .setGender("Other")
-                .setuserNumber("9051112233");
-
-        $("#submit").click();
+                .setuserNumber("9051112233")
+                .clickSubmit();
 
         registrationFormPage.checkResultsTableVisible()
                 .checkResult("Student Name", "Vadim Pirogkov")
                 .checkResult("Student Email", "Pirogkov@gmail.com")
                 .checkResult("Gender", "Other")
-                .checkResult("Mobile", "9051112233");
-        $("#closeLargeModal").click();
+                .checkResult("Mobile", "9051112233")
+                .clickClose();
     }
 }
